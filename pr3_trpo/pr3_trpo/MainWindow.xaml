@@ -1,0 +1,93 @@
+﻿<Window x:Class="pr3_trpo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pr3_trpo"
+        mc:Ignorable="d"
+        Title="Заказ доставки" Height="700" Width="850">
+    <DockPanel Margin="20">
+        <TextBlock DockPanel.Dock="Top" Text="Заказ доставки" FontSize="20" Foreground="White" Margin="0,0,0,20" Background="#8B7355"/>
+        <TextBlock DockPanel.Dock="Bottom" Text="Предварительная стоимость: 450 ₽" Foreground="Gray" Margin="0,20,0,0"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="120"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" Text="Отправитель" FontWeight="SemiBold" Margin="0,0,0,5"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Отправитель" VerticalAlignment="Center" Margin="0,0,10,10"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="0,0,20,10" Height="24"/>
+            <TextBlock Grid.Row="1" Grid.Column="2" Text="Телефон отправителя" VerticalAlignment="Center" Margin="0,0,15,10"/>
+            <TextBox Grid.Row="1" Grid.Column="3" Margin="0,0,0,10" Height="24"/>
+
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Text="Получатель" FontWeight="SemiBold" Margin="0,10,0,5"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Получатель" VerticalAlignment="Center" Margin="0,0,10,10"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Margin="0,0,20,10" Height="24"/>
+            <TextBlock Grid.Row="3" Grid.Column="2" Text="Телефон получателя" VerticalAlignment="Center" Margin="0,0,10,10"/>
+            <TextBox Grid.Row="3" Grid.Column="3" Margin="0,0,0,10" Height="24"/>
+
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="4" Text="Адрес доставки" FontWeight="SemiBold" Margin="0,10,0,5"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Город" VerticalAlignment="Center" Margin="0,0,10,10"/>
+            <TextBox Grid.Row="5" Grid.Column="1" Margin="0,0,20,10" Height="24"/>
+            <TextBlock Grid.Row="5" Grid.Column="2" Text="Дом" VerticalAlignment="Center" Margin="0,0,10,10"/>
+            <TextBox Grid.Row="5" Grid.Column="3" Margin="0,0,0,10" Height="24"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Улица" VerticalAlignment="Center" Margin="0,0,10,10"/>
+            <TextBox Grid.Row="6" Grid.Column="1" Margin="0,0,20,10" Height="24"/>
+            <TextBlock Grid.Row="6" Grid.Column="2" Text="Квартира" VerticalAlignment="Center" Margin="0,0,10,10"/>
+            <TextBox Grid.Row="6" Grid.Column="3" Margin="0,0,0,10" Height="24"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Дата доставки" VerticalAlignment="Center" Margin="0,0,10,10"/>
+            <DatePicker Grid.Row="7" Grid.Column="1" Margin="0,0,20,10" Height="24" HorizontalAlignment="Left" Width="150"/>
+
+
+            <StackPanel Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" Margin="0,5,0,15">
+                <RadioButton Content="До двери" IsChecked="True" Margin="0,0,20,0" GroupName="DeliveryType"/>
+                <RadioButton Content="До пункта выдачи" GroupName="DeliveryType"/>
+            </StackPanel>
+
+
+            <TextBlock Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="4" Text="Комментарий курьеру" VerticalAlignment="Top" Margin="0,5,0,5"/>
+            <TextBox Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" Height="60" TextWrapping="Wrap" AcceptsReturn="True" Margin="0,0,0,15" VerticalScrollBarVisibility="Auto"/>
+
+
+            <TextBlock Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="4" Text="Параметры посылки" FontWeight="SemiBold" Margin="0,10,0,5"/>
+            <WrapPanel Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="4" Margin="0,5,0,20">
+                <CheckBox Content="Хрупкое" Margin="0,0,20,10"/>
+                <CheckBox Content="Не переворачивать" Margin="0,0,20,10"/>
+                <CheckBox Content="Позвонить заранее" Margin="0,0,20,10"/>
+                <CheckBox Content="Нужна упаковка" Margin="0,0,20,10"/>
+                <CheckBox Content="Страхование" Margin="0,0,0,10"/>
+            </WrapPanel>
+
+
+            <StackPanel Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                <Button Content="Оформить" Width="100" Height="30" Margin="0,0,10,0"/>
+                <Button Content="Отмена" Width="100" Height="30"/>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
